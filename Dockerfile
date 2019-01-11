@@ -42,3 +42,8 @@ RUN service apache2 start && \
   (./install  || true)
 
 RUN rm /tmp/mooshak-$MOOSHAK_VERSION.tgz
+
+# Entry point
+ENTRYPOINT service apache2 start && /bin/bash
+
+
