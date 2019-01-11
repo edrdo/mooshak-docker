@@ -21,3 +21,4 @@ RUN cd /etc/apache2/mods-enabled && \
     ln -s ../mods-available/userdir.load && \
     ln -s ../mods-available/suexec.load
 
+COPY apache-userdir.conf /etc/apache2/mods-available/userdir.conf
