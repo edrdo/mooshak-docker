@@ -40,10 +40,10 @@ RUN \
 RUN service apache2 start && \
     sleep 5 && \
     cd /tmp/mooshak-$MOOSHAK_VERSION && \
-  (./install  || true) && \
-  service apache2 stop
+    ./install && \
+    service apache2 stop && \
+    rm -fr /tmp/mooshak*
 
-RUN rm /tmp/mooshak-$MOOSHAK_VERSION.tgz
 
 # Entry point
 ENTRYPOINT service apache2 start && /bin/bash
