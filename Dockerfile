@@ -23,6 +23,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install  -y \
 # Configure Apache
 RUN \
   cd /etc/apache2/mods-enabled && \
+  ln -s ../mods-available/cgi.load && \
   ln -s ../mods-available/userdir.conf && \
   ln -s ../mods-available/userdir.load && \
   ln -s ../mods-available/suexec.load
