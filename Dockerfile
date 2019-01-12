@@ -39,7 +39,8 @@ RUN \
 RUN service apache2 start && \
     sleep 5 && \
     cd /tmp/mooshak-$MOOSHAK_VERSION && \
-  (./install  || true)
+  (./install  || true) && \
+  service apache2 stop
 
 RUN rm /tmp/mooshak-$MOOSHAK_VERSION.tgz
 
