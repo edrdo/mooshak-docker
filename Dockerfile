@@ -44,8 +44,11 @@ RUN service apache2 start && \
     service apache2 stop && \
     rm -fr /tmp/mooshak*
 
+EXPOSE 80
 
 # Entry point
-ENTRYPOINT service apache2 start && /bin/bash
+ENTRYPOINT service apache2 start && \
+           cd /home/mooshak && \
+           su mooshak 
 
 
